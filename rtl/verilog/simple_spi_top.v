@@ -154,6 +154,7 @@ module simple_spi #(
        3'b010: dat_o <= rfdout;
        3'b011: dat_o <= sper;
        3'b100: dat_o <= {{ (8-SS_WIDTH){1'b0} }, ss_r};
+      default: dat_o <= 0;
     endcase
 
   // read fifo
