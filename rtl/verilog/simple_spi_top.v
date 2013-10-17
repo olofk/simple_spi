@@ -92,9 +92,9 @@ module simple_spi_top(
   //
   // Module body
   //
-  reg  [7:0] spcr;       // Serial Peripheral Control Register ('HC11 naming)
-  wire [7:0] spsr;       // Serial Peripheral Status register ('HC11 naming)
-  reg  [7:0] sper;       // Serial Peripheral Extension register
+  reg  [7:0]          spcr;       // Serial Peripheral Control   Register ('HC11 naming)
+  wire [7:0]          spsr;       // Serial Peripheral Status    Register ('HC11 naming)
+  reg  [7:0]          sper;       // Serial Peripheral Extension Register
   reg  [7:0] treg, rreg; // Transmit/Receive register
 
   // fifo signals
