@@ -50,11 +50,6 @@
 //               $Log: not supported by cvs2svn $
 //
 
-// synopsys translate_off
-`include "timescale.v"
-// synopsys translate_on
-
-
 // 4 entry deep fast fifo
 module fifo4(clk, rst, clr,  din, we, dout, re, full, empty);
 

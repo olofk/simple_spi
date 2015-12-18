@@ -66,10 +66,6 @@
 // Currently only MASTER mode is supported
 //
 
-// synopsys translate_off
-`include "timescale.v"
-// synopsys translate_on
-
 module simple_spi #(
   parameter SS_WIDTH = 1
 )(
