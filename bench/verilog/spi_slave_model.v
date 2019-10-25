@@ -51,12 +51,10 @@
 
 // Requires: Verilog2001
 
-`include "timescale.v"
-
 module spi_slave_model (
-	input  wire csn;
-	input  wire sck
-	input  wire di;
+	input  wire csn,
+	input  wire sck,
+	input  wire di,
 	output wire do
 );
 
