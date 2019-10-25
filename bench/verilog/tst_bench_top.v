@@ -47,8 +47,6 @@
 //
 //
 
-`include "timescale.v"
-
 module tst_bench_top();
 
 	//
@@ -101,13 +99,13 @@ module tst_bench_top();
 	);
 
 	// hookup spi core
-	simple_spi_top spi_top (
+	simple_spi spi_top (
 		// wishbone interface
 		.clk_i (clk),
-		.rst_i (rstn),
+		.rst_i (!rstn),
 		.cyc_i (cyc),
 		.stb_i (stb),
-		.adr_i (adr[1:0]),
+		.adr_i ({1'b0,adr[1:0]}),
 		.we_i  (we),
 		.dat_i (dat_o),
 		.dat_o (dat_i),
@@ -116,6 +114,7 @@ module tst_bench_top();
 
 		.sck_o (sck),
 		.mosi_o(mosi),
+		.ss_o  (),
 		.miso_i(miso)
 	);
 
@@ -148,7 +147,7 @@ module tst_bench_top();
 	      rstn = 1'b1; // negate reset
 	      #2;
 	      rstn = 1'b0; // assert reset
-	      repeat(1) @(posedge clk);
+	      repeat(2) @(posedge clk);
 	      rstn = 1'b1; // negate reset
 
 	      $display("status: %t done reset", $time);
