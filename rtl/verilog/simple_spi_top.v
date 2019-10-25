@@ -254,6 +254,7 @@ module simple_spi #(
         4'b1001: clkcnt <= 12'h1ff; // 1024
         4'b1010: clkcnt <= 12'h3ff; // 2048
         4'b1011: clkcnt <= 12'h7ff; // 4096
+        default : clkcnt <= 12'hfff;
       endcase
 
   // generate clock enable signal
