@@ -79,6 +79,8 @@ module tst_bench_top();
 	//
 	integer n;
 
+	vlog_tb_utils vtu();
+
 	// generate clock
 	always #5 clk = ~clk;
 
